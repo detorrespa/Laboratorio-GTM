@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafetera Norte · Suscripción</title>
+<link rel="stylesheet" href="styles.css">
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 1 DE GOOGLE TAG MANAGER (el del <head>)    -->
+<!-- ================================================================= -->
+
+</head>
+<body>
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 2 DE GOOGLE TAG MANAGER (el del <body>)    -->
+<!-- ================================================================= -->
+
+<header>
+  <nav>
+    <a class="logo" href="index.html">Cafetera Norte</a>
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Suscripción</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Suscripción mensual</h1>
+  <p class="lead">Café recién tostado en casa cada mes. Esta página hace de página de producto: es donde medirás el paso intermedio del embudo.</p>
+
+  <h2>Los tres planes</h2>
+
+  <table>
+    <thead>
+      <tr><th>Plan</th><th>Cantidad</th><th>Precio</th><th></th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Ligero</td><td>250 g al mes</td><td>12 €</td>
+        <td><button class="btn btn-secundario btn-plan" id="btn-plan-ligero" data-plan="ligero" data-precio="12">Elegir</button></td>
+      </tr>
+      <tr>
+        <td>Habitual</td><td>500 g al mes</td><td>21 €</td>
+        <td><button class="btn btn-primario btn-plan" id="btn-plan-habitual" data-plan="habitual" data-precio="21">Elegir</button></td>
+      </tr>
+      <tr>
+        <td>Cafetera</td><td>1 kg al mes</td><td>38 €</td>
+        <td><button class="btn btn-secundario btn-plan" id="btn-plan-cafetera" data-plan="cafetera" data-precio="38">Elegir</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div id="plan-elegido" style="display:none" class="exito"></div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Los tres botones comparten la clase <code>btn-plan</code> y
+    tienen además un ID propio y atributos <code>data-plan</code> y <code>data-precio</code>.
+    Es el escenario ideal para practicar un evento con parámetros: un único activador para los tres
+    (por la clase <code>btn-plan</code>) y el plan concreto viajando como parámetro.
+  </p>
+
+  <div class="caja">
+    <h3 style="margin-top:0">Ejercicio recomendado</h3>
+    <p>Crea <strong>un solo</strong> activador para los tres botones y un evento llamado <code>plan_seleccionado</code>
+      con dos parámetros: <code>plan</code> y <code>precio</code>.</p>
+    <p style="margin-bottom:0">Para leer los atributos <code>data-</code> necesitarás una variable de tipo
+      elemento del DOM o de atributo de clic. Es el ejercicio que conecta el procedimiento 10 con el 15:
+      después tendrás que dar de alta <code>plan</code> como dimensión personalizada para poder verlo en los informes.</p>
+  </div>
+
+  <h2>Cómo funciona</h2>
+  <p>Tostamos los lunes y enviamos los martes. Recibes el café entre el miércoles y el viernes de la misma semana, según dónde vivas.</p>
+  <p>Puedes pausar o cancelar la suscripción cuando quieras desde tu cuenta, sin llamar a nadie ni explicar por qué.</p>
+
+  <h3>Origen del café</h3>
+  <p>Trabajamos con tres fincas. Cada mes recibes una de ellas, con una ficha que explica la altitud, la variedad y el proceso. La idea no es que te lo aprendas, sino que vayas notando las diferencias.</p>
+
+  <h3>Molienda</h3>
+  <p>Puedes pedirlo en grano o molido para espresso, filtro o cafetera italiana. Si tienes molinillo, pídelo en grano: la diferencia es mayor de lo que parece.</p>
+
+  <h3>Qué pasa si no te gusta</h3>
+  <p>Nos lo dices y te enviamos otro origen distinto sin coste. Si sigue sin convencerte, cancelas y te devolvemos el mes.</p>
+
+  <div class="acciones">
+    <a href="contacto.html" class="btn btn-primario" id="btn-cta-contacto">Tengo una duda antes de suscribirme</a>
+  </div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Ojo con este último: es un <code>&lt;a&gt;</code> con aspecto de botón,
+    no un <code>&lt;button&gt;</code>. El activador de clic en enlaces sí lo captura; un activador restringido a
+    elementos de tipo botón, no. Es una de las causas más frecuentes de «configuré el activador y no dispara».
+  </p>
+</main>
+
+<footer>
+  <div>Cafetera Norte · Sitio de pruebas para formación en analítica digital · Los datos y la empresa son ficticios.</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.btn-plan').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var caja = document.getElementById('plan-elegido');
+      caja.textContent = 'Has elegido el plan ' + b.dataset.plan + ' · ' + b.dataset.precio + ' € al mes.';
+      caja.style.display = 'block';
+    });
+  });
+</script>
+
+</body>
+</html>

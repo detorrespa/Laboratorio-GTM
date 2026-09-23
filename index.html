@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafetera Norte · Inicio</title>
+<link rel="stylesheet" href="styles.css">
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 1 DE GOOGLE TAG MANAGER (el del <head>)    -->
+<!-- Empieza por: <!- - Google Tag Manager - -> <script>(function(w,d, -->
+<!-- ================================================================= -->
+
+</head>
+<body>
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 2 DE GOOGLE TAG MANAGER (el del <body>)    -->
+<!-- Empieza por: <noscript><iframe src="https://www.googletagmanager   -->
+<!-- ================================================================= -->
+
+<header>
+  <nav>
+    <a class="logo" href="index.html">Cafetera Norte</a>
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Suscripción</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Café de especialidad, tostado esta semana</h1>
+  <p class="lead">Sitio de pruebas para practicar Google Tag Manager y Google Analytics 4. Todo lo que hay en esta web está puesto a propósito para que puedas medirlo.</p>
+
+  <div class="acciones">
+    <!-- BOTÓN 1: tiene ID propio. Es el que debes usar para apuntar por ID. -->
+    <button id="btn-demo" class="btn btn-primario">Pedir una demostración</button>
+
+    <!-- BOTÓN 2: NO tiene ID. Solo se puede apuntar por clase. -->
+    <button class="btn btn-secundario btn-catalogo">Ver el catálogo</button>
+  </div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> El primer botón tiene <code>id="btn-demo"</code>.
+    El segundo no tiene ID: solo se puede identificar por su clase <code>btn-catalogo</code>.
+    Practica los dos casos en el procedimiento 10.
+  </p>
+
+  <h2>Por qué este café</h2>
+  <p>Trabajamos con tres fincas en el norte del país y tostamos en lotes pequeños cada lunes. El café llega a casa entre dos y cinco días después del tueste, que es la ventana en la que de verdad sabe a algo.</p>
+  <p>No vendemos café en grandes cantidades ni lo almacenamos durante meses. Eso limita cuánto podemos crecer, y nos parece bien.</p>
+
+  <h2>Elige tu molienda</h2>
+  <div class="acciones">
+    <!-- BOTONES 3 y 4: MISMO TEXTO, distinto propósito. -->
+    <button class="btn btn-secundario" data-molienda="espresso">Seleccionar</button>
+    <button class="btn btn-secundario" data-molienda="filtro">Seleccionar</button>
+  </div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Estos dos botones tienen exactamente el mismo texto visible
+    (<code>Seleccionar</code>) pero hacen cosas distintas. Si apuntas un activador al texto del botón,
+    no podrás distinguirlos. Es la demostración práctica de por qué nunca se apunta al texto.
+  </p>
+
+  <h2>Busca en el sitio</h2>
+  <form action="recursos.html" method="get" class="buscador">
+    <div>
+      <label for="q">¿Qué estás buscando?</label>
+      <input type="search" id="q" name="q" placeholder="tueste, origen, suscripción...">
+    </div>
+    <button type="submit" class="btn btn-primario">Buscar</button>
+  </form>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Este buscador envía el término en el parámetro <code>q</code>
+    de la URL. La medición mejorada de GA4 detecta la búsqueda interna automáticamente cuando usa
+    parámetros habituales como <code>q</code>, <code>s</code> o <code>search</code>. No tienes que implementar nada.
+  </p>
+
+  <h2>Dónde encontrarnos</h2>
+  <p>Estamos en la plaza del mercado, los sábados por la mañana. También puedes leer sobre el método de tueste que usamos en
+    <!-- ENLACE EXTERNO: sale del dominio. La medición mejorada lo captura como clic saliente. -->
+    <a href="https://es.wikipedia.org/wiki/Tueste_del_caf%C3%A9" target="_blank" rel="noopener" id="enlace-externo-wikipedia">este artículo sobre el tueste del café</a>.
+  </p>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Ese enlace sale de tu dominio, así que la medición mejorada
+    lo registra como <code>click</code> saliente sin que implementes nada. Compruébalo en el modo Vista Previa.
+  </p>
+
+  <div class="caja">
+    <h3>Siguiente paso del manual</h3>
+    <p style="margin:0">Cuando tengas el contenedor instalado y verificado, ve a la página de <a href="contacto.html">Contacto</a>: ahí están los dos formularios del procedimiento 11.</p>
+  </div>
+</main>
+
+<footer>
+  <div>Cafetera Norte · Sitio de pruebas para formación en analítica digital · Los datos y la empresa son ficticios.</div>
+</footer>
+
+</body>
+</html>

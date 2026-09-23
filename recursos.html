@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafetera Norte · Recursos</title>
+<link rel="stylesheet" href="styles.css">
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 1 DE GOOGLE TAG MANAGER (el del <head>)    -->
+<!-- ================================================================= -->
+
+</head>
+<body>
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 2 DE GOOGLE TAG MANAGER (el del <body>)    -->
+<!-- ================================================================= -->
+
+<header>
+  <nav>
+    <a class="logo" href="index.html">Cafetera Norte</a>
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Suscripción</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <div id="resultado-busqueda" style="display:none" class="caja"></div>
+
+  <h1>Guía del tueste</h1>
+  <p class="lead">Esta página es deliberadamente larga. La necesitas para practicar el evento de desplazamiento del procedimiento 12, y aquí están también el PDF y el vídeo que captura la medición mejorada.</p>
+
+  <h2>Descarga la guía completa</h2>
+  <div class="acciones">
+    <a href="guia-tueste.pdf" class="btn btn-primario" id="btn-descarga-pdf" download>Descargar la guía en PDF</a>
+  </div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> La medición mejorada de GA4 registra automáticamente las descargas
+    de extensiones habituales, incluida <code>.pdf</code>, con el evento <code>file_download</code>.
+    No implementes nada: compruébalo primero en el modo Vista Previa. Es el segundo caso, después del scroll,
+    en que la respuesta correcta es «no hagas nada, ya está hecho».
+  </p>
+
+  <h2>Vídeo: cómo distinguir un tueste claro de uno oscuro</h2>
+
+  <div class="caja-aviso">
+    <h3 style="margin-top:0">Este bloque necesita 30 segundos de configuración</h3>
+    <p>Abre este archivo en un editor de texto, busca <code>VIDEO_ID_AQUI</code> y sustitúyelo por el identificador
+      de cualquier vídeo de YouTube. El identificador es lo que aparece después de <code>v=</code> en la URL del vídeo.</p>
+    <p style="margin-bottom:0"><strong>No quites el parámetro <code>enablejsapi=1</code>.</strong> Sin él, GA4
+      no puede medir la interacción con el vídeo, y es la causa número uno de «tengo la medición mejorada activada
+      pero el vídeo no se registra». Ese detalle, dicho en clase, vale por sí solo el bloque.</p>
+  </div>
+
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID_AQUI?enablejsapi=1"
+            title="Vídeo de prueba"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+  </div>
+
+  <h2>Qué pasa dentro del grano</h2>
+  <p>El café verde no sabe a café. Huele a hierba, a legumbre cruda, y si lo muerdes es duro como una piedra. Todo lo que asociamos al café (el aroma, el color, el amargor, la acidez) aparece durante el tueste, en una ventana de entre diez y quince minutos.</p>
+  <p>Durante los primeros minutos el grano solo pierde agua. Pasa de verde a amarillo pálido y empieza a oler a pan tostado o a palomitas. Todavía no hay nada de café en ese olor.</p>
+  <p>Después llega la reacción de Maillard, la misma que dora la corteza del pan o la superficie de un filete. Es donde se forman la mayoría de los compuestos aromáticos: se han identificado más de ochocientos en el café tostado, y ninguno estaba presente en el grano verde.</p>
+
+  <h3>El primer crack</h3>
+  <p>En torno a los 196 grados, el vapor acumulado dentro del grano rompe su estructura y suena un chasquido seco, parecido a las palomitas. Es el primer crack, y marca el comienzo del territorio donde el café ya es bebible.</p>
+  <p>Un tueste claro se detiene poco después de ese momento. Conserva más acidez, más notas florales y frutales, y más de las características del origen concreto. Es el que usan la mayoría de las tostadoras de especialidad.</p>
+
+  <h3>El segundo crack</h3>
+  <p>Si se sigue aplicando calor, hacia los 224 grados llega un segundo chasquido, más apagado y continuo. Ahí los aceites empiezan a salir a la superficie y el grano brilla. El sabor del origen se difumina y empieza a dominar el del propio tueste: chocolate, frutos secos, un amargor más redondo.</p>
+  <p>Ni uno es mejor que otro. Son decisiones distintas sobre qué quieres que sepa la taza, y sobre todo sobre cómo vas a prepararla.</p>
+
+  <h2>La curva de tueste</h2>
+  <p>Una tostadora profesional registra la temperatura del grano cada pocos segundos y dibuja con ello una curva. Esa curva es la receta: dos cafés del mismo origen tostados con curvas distintas saben a cosas distintas.</p>
+  <p>Lo que se controla no es solo la temperatura final, sino el ritmo al que se llega. Subir rápido al principio y aplanar al final produce una taza; subir despacio y acelerar al final produce otra. Aquí es donde el tueste deja de ser un proceso y se vuelve un oficio.</p>
+
+  <h3>Desarrollo</h3>
+  <p>Se llama tiempo de desarrollo a lo que transcurre entre el primer crack y el final del tueste. Suele estar entre el quince y el veinticinco por ciento del tiempo total. Por debajo, el café sabe a hierba y a cereal crudo por dentro aunque por fuera parezca tostado. Por encima, se apaga.</p>
+
+  <h3>Reposo</h3>
+  <p>El café recién tostado libera dióxido de carbono durante varios días. Si lo preparas el mismo día, ese gas interfiere con la extracción y la taza sale irregular. Entre dos y cinco días después del tueste es la ventana en la que la mayoría de los cafés dan lo mejor de sí.</p>
+  <p>A partir de tres o cuatro semanas empieza la cuesta abajo. No se estropea, pero se apaga: pierde primero los aromas más volátiles, que suelen ser los más interesantes.</p>
+
+  <h2>Cómo leer una etiqueta</h2>
+  <p>Una bolsa de café de especialidad suele indicar cinco cosas: el origen, la variedad, la altitud, el proceso y la fecha de tueste. Si falta la fecha de tueste, desconfía: es el dato que más afecta a lo que vas a beber y el único que el tostador no puede maquillar.</p>
+  <p>La altitud importa porque el grano madura más despacio en altura, y esa lentitud concentra azúcares y ácidos. Por eso los cafés de gran altitud suelen ser más ácidos y más complejos.</p>
+  <p>El proceso describe cómo se separó el grano de la fruta. El lavado da tazas más limpias y ácidas; el natural, más dulces y afrutadas, a veces con notas fermentadas. No es una cuestión de calidad sino de estilo.</p>
+
+  <h2>Errores habituales en casa</h2>
+  <p>El más común, con diferencia, es usar café molido hace semanas. La molienda multiplica la superficie expuesta al aire y acelera enormemente la pérdida de aromas. Un café molido hace un mes tiene poco que ver con el mismo café molido hace un minuto.</p>
+  <p>El segundo es el agua. El café es agua en más de un noventa y ocho por ciento, y un agua demasiado dura o demasiado blanda arruina cualquier grano. Si el café de tu casa siempre sabe plano, prueba con agua embotellada de mineralización débil antes de culpar al café.</p>
+  <p>El tercero es la temperatura. El agua hirviendo quema el café y extrae amargor. Entre noventa y noventa y seis grados es el rango razonable: en la práctica, apartar el hervidor y esperar treinta segundos.</p>
+
+  <h2>Glosario rápido</h2>
+  <table>
+    <thead><tr><th>Término</th><th>Qué significa</th></tr></thead>
+    <tbody>
+      <tr><td>Café verde</td><td>El grano sin tostar, tal como llega de origen</td></tr>
+      <tr><td>Primer crack</td><td>El chasquido que marca el inicio del tueste bebible</td></tr>
+      <tr><td>Desarrollo</td><td>Tiempo entre el primer crack y el final del tueste</td></tr>
+      <tr><td>Desgasificación</td><td>Liberación de CO2 durante los días posteriores al tueste</td></tr>
+      <tr><td>Extracción</td><td>Proporción de materia del grano que acaba disuelta en la taza</td></tr>
+      <tr><td>Cuerpo</td><td>Sensación de densidad del café en boca</td></tr>
+    </tbody>
+  </table>
+
+  <div class="caja">
+    <h3 style="margin-top:0">Has llegado al final de la página</h3>
+    <p style="margin-bottom:0">Si tenías el modo Vista Previa abierto, deberías haber visto dispararse el evento <code>scroll</code>
+      al pasar el 90 % de la página. Ese evento viene de la medición mejorada, no de nada que hayas configurado tú.
+      Compruébalo antes de implementar tu propia versión: es el ejercicio del procedimiento 12.</p>
+  </div>
+</main>
+
+<footer>
+  <div>Cafetera Norte · Sitio de pruebas para formación en analítica digital · Los datos y la empresa son ficticios.</div>
+</footer>
+
+<script>
+  // Muestra el término buscado desde el buscador de la portada.
+  (function () {
+    var q = new URLSearchParams(window.location.search).get('q');
+    if (q) {
+      var caja = document.getElementById('resultado-busqueda');
+      caja.innerHTML = '<strong>Resultados para «' + q.replace(/[<>]/g, '') + '»</strong><br>' +
+        'Esta es una búsqueda de demostración: siempre devuelve esta misma página. ' +
+        'Lo que importa para el laboratorio es que el término viaja en el parámetro <code>q</code> de la URL, ' +
+        'que es lo que detecta la medición mejorada de GA4.';
+      caja.style.display = 'block';
+    }
+  })();
+</script>
+
+</body>
+</html>

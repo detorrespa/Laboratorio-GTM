@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cafetera Norte · Contacto</title>
+<link rel="stylesheet" href="styles.css">
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 1 DE GOOGLE TAG MANAGER (el del <head>)    -->
+<!-- ================================================================= -->
+
+</head>
+<body>
+
+<!-- ================================================================= -->
+<!-- PEGA AQUÍ EL FRAGMENTO 2 DE GOOGLE TAG MANAGER (el del <body>)    -->
+<!-- ================================================================= -->
+
+<header>
+  <nav>
+    <a class="logo" href="index.html">Cafetera Norte</a>
+    <a href="index.html">Inicio</a>
+    <a href="servicio.html">Suscripción</a>
+    <a href="recursos.html">Recursos</a>
+    <a href="contacto.html">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Hablemos</h1>
+  <p class="lead">Esta página tiene dos formularios a propósito. Uno se comporta como un formulario clásico; el otro, como los que te vas a encontrar en el mundo real.</p>
+
+  <div class="caja-aviso">
+    <h3 style="margin-top:0">Por qué hay dos formularios</h3>
+    <p style="margin-bottom:0">El procedimiento 11 del manual enseña tres estrategias para medir un envío de formulario. Necesitas un caso donde la estrategia fácil funcione y otro donde falle. Aquí tienes los dos.</p>
+  </div>
+
+  <h2>Formulario A · Pedir información</h2>
+  <p>Es un formulario HTML clásico: al enviarlo, el navegador cambia de página y te lleva a una página de gracias.</p>
+
+  <form id="form-contacto" action="gracias.html" method="get">
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="interes">¿Qué te interesa?</label>
+    <select id="interes" name="interes">
+      <option value="suscripcion">La suscripción mensual</option>
+      <option value="puntual">Una compra puntual</option>
+      <option value="mayorista">Venta a hostelería</option>
+    </select>
+
+    <label for="mensaje">Mensaje</label>
+    <textarea id="mensaje" name="mensaje"></textarea>
+
+    <div class="acciones">
+      <button type="submit" id="btn-enviar-contacto" class="btn btn-primario">Enviar solicitud</button>
+    </div>
+  </form>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio.</strong> Este formulario tiene <code>id="form-contacto"</code> y su botón,
+    <code>id="btn-enviar-contacto"</code>. Al enviarse redirige a <code>gracias.html</code>.
+    Aquí puedes practicar la <strong>estrategia A</strong> (activador de envío de formulario) y la
+    <strong>estrategia C</strong> (medir la vista de la página de gracias). Compara las dos: deberían coincidir.
+  </p>
+
+  <h2>Formulario B · Apuntarse a la lista de tueste</h2>
+  <p>Este no es un formulario HTML. Es un bloque de campos gestionado por JavaScript, como los de la mayoría de webs modernas. No recarga la página ni redirige a ningún sitio.</p>
+
+  <div id="bloque-newsletter">
+    <label for="email-newsletter">Correo electrónico</label>
+    <input type="email" id="email-newsletter" name="email_newsletter" placeholder="tucorreo@ejemplo.com">
+
+    <div class="acciones">
+      <button type="button" id="btn-suscribirse" class="btn btn-primario">Apuntarme</button>
+    </div>
+  </div>
+
+  <div id="mensaje-newsletter" style="display:none" class="exito">
+    Listo. Te avisaremos cada lunes con el tueste de la semana.
+  </div>
+
+  <p class="nota-lab">
+    <strong>Nota de laboratorio · este es el importante.</strong> Aquí <u>no hay etiqueta <code>&lt;form&gt;</code></u>,
+    así que el navegador nunca emite el evento de envío que GTM escucha. El activador de envío de formulario
+    <strong>no va a dispararse nunca</strong>, por mucho que lo configures bien.
+    No es un fallo tuyo: es exactamente lo que ocurre en el mundo real y la razón por la que existe la
+    <strong>estrategia B</strong> (medir el clic en <code>btn-suscribirse</code>).
+    Pruébalo primero con el activador de formulario, comprueba que no dispara, y solo entonces cambia de estrategia.
+    Ese recorrido es el aprendizaje.
+  </p>
+
+  <div class="caja">
+    <h3 style="margin-top:0">Ejercicio de diagnóstico</h3>
+    <p style="margin-bottom:0">Configura un activador de envío de formulario que cubra toda la página. Comprueba en el modo Vista Previa que dispara con el formulario A y no con el B. Sabrás explicar por qué, y esa explicación es la respuesta a la pregunta que más te van a hacer en clase.</p>
+  </div>
+</main>
+
+<footer>
+  <div>Cafetera Norte · Sitio de pruebas para formación en analítica digital · Los datos y la empresa son ficticios.</div>
+</footer>
+
+<script>
+  // Formulario B: gestionado por JavaScript, sin etiqueta <form> y sin redirección.
+  // Reproduce a propósito el caso en que el activador de envío de formulario de GTM no funciona.
+  document.getElementById('btn-suscribirse').addEventListener('click', function () {
+    var campo = document.getElementById('email-newsletter');
+    if (!campo.value || campo.value.indexOf('@') === -1) {
+      alert('Escribe un correo válido para continuar.');
+      return;
+    }
+    document.getElementById('bloque-newsletter').style.display = 'none';
+    document.getElementById('mensaje-newsletter').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo usar este laboratorio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <nav>
+    <a class="logo" href="LEEME.html">Laboratorio GTM · Instrucciones</a>
+    <a href="index.html">Abrir el sitio</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Cómo usar este laboratorio</h1>
+  <p class="lead">Un sitio de pruebas completo para practicar Google Tag Manager y Google Analytics 4. Cada elemento está puesto a propósito para que puedas medirlo, incluidos los que fallan.</p>
+
+  <div class="caja-aviso">
+    <h3 style="margin-top:0">Esta página no lleva GTM</h3>
+    <p style="margin-bottom:0">Es solo el manual de instrucciones. Los huecos para pegar el código están en las cinco páginas del sitio, no aquí.</p>
+  </div>
+
+  <h2>1 · Qué hay en la carpeta</h2>
+  <table>
+    <thead><tr><th>Archivo</th><th>Qué es</th></tr></thead>
+    <tbody>
+      <tr><td><code>index.html</code></td><td>Portada. Botones, buscador interno y enlace externo</td></tr>
+      <tr><td><code>servicio.html</code></td><td>Página de producto. Tres botones de plan con atributos de datos</td></tr>
+      <tr><td><code>contacto.html</code></td><td>Los dos formularios: uno que funciona y otro que falla a propósito</td></tr>
+      <tr><td><code>gracias.html</code></td><td>Página de confirmación. Es el destino del formulario A</td></tr>
+      <tr><td><code>recursos.html</code></td><td>Página larga: scroll, vídeo y descarga de PDF</td></tr>
+      <tr><td><code>guia-tueste.pdf</code></td><td>El archivo descargable</td></tr>
+      <tr><td><code>styles.css</code></td><td>Los estilos. No hace falta tocarlo</td></tr>
+      <tr><td><code>LEEME.html</code></td><td>Esta página</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2 · Publícalo en internet</h2>
+  <p><strong>Tiene que estar en internet, no en tu disco duro.</strong> Si abres los archivos con doble clic verás el sitio, pero GTM y GA4 no funcionarán bien: necesitan un dominio real. Es la causa número uno de «lo he hecho todo y no me sale nada».</p>
+
+  <h3>Opción recomendada: Netlify Drop</h3>
+  <ol>
+    <li>Entra en <code>app.netlify.com/drop</code>.</li>
+    <li>Arrastra <strong>la carpeta entera</strong> a la ventana del navegador.</li>
+    <li>En unos segundos te da una dirección pública del tipo <code>algo-aleatorio.netlify.app</code>.</li>
+    <li>Copia esa dirección: es la URL de tu laboratorio y la que usarás en el procedimiento 2.</li>
+  </ol>
+  <p>No hace falta crear cuenta para la primera prueba, aunque si la creas podrás volver a editar el sitio y conservar la misma dirección.</p>
+
+  <h3>Alternativas</h3>
+  <ul>
+    <li><strong>GitHub Pages</strong>: si ya usas GitHub, sube la carpeta a un repositorio y actívalo en los ajustes. Gratis y permanente.</li>
+    <li><strong>Cloudflare Pages</strong>: mismo funcionamiento que Netlify.</li>
+    <li><strong>Tu propio hosting</strong>: sube los archivos por FTP a una subcarpeta.</li>
+  </ul>
+
+  <div class="caja">
+    <h3 style="margin-top:0">Antes de seguir</h3>
+    <p style="margin-bottom:0">Abre tu sitio publicado y navega por las cinco páginas. Comprueba que los enlaces del menú funcionan y que el formulario A te lleva a la página de gracias. Si algo no va, arréglalo <em>antes</em> de instalar GTM: si no, no sabrás si el fallo es del sitio o de la medición.</p>
+  </div>
+
+  <h2>3 · Pega el código de GTM</h2>
+  <p>Cuando termines el procedimiento 3 del manual tendrás dos fragmentos de código. En las cinco páginas del sitio hay dos bloques de comentarios marcando exactamente dónde va cada uno:</p>
+  <ul>
+    <li>El <strong>primer fragmento</strong> va dentro del <code>&lt;head&gt;</code>, en el hueco marcado justo antes de <code>&lt;/head&gt;</code>.</li>
+    <li>El <strong>segundo</strong> va justo después de <code>&lt;body&gt;</code>, en el segundo hueco marcado.</li>
+  </ul>
+  <p>Ábrelos con el Bloc de notas o cualquier editor de texto, pega, y vuelve a subir la carpeta.</p>
+
+  <div class="caja-aviso">
+    <h3 style="margin-top:0">Hay que hacerlo en las cinco páginas</h3>
+    <p>Sí, es repetitivo: es exactamente por eso que en un sitio real esto lo hace una plantilla y no una persona. Menciónalo en clase, porque explica por qué GTM se instala una vez y luego ya no se toca el código nunca más.</p>
+    <p style="margin-bottom:0"><strong>Si te saltas una página</strong>, tendrás un agujero de medición que se comporta de forma errática. Es un fallo muy bueno para provocar a propósito en el bloque de depuración de la sesión 2.</p>
+  </div>
+
+  <h3>Comprobación</h3>
+  <p>Abre cualquier página publicada, haz clic derecho, elige ver el código fuente y busca <code>GTM-</code>. Debe aparecer <strong>dos veces</strong> en cada página. Ni una ni tres.</p>
+
+  <h2>4 · Configura el vídeo (30 segundos)</h2>
+  <p>En <code>recursos.html</code>, busca <code>VIDEO_ID_AQUI</code> y sustitúyelo por el identificador de cualquier vídeo de YouTube: es lo que aparece después de <code>v=</code> en la URL del vídeo.</p>
+  <p><strong>No borres el parámetro <code>enablejsapi=1</code>.</strong> Sin él, GA4 no puede medir la reproducción del vídeo aunque tengas la medición mejorada activada. Es un detalle que casi nadie conoce y que funciona muy bien como aportación en clase.</p>
+
+  <h2>5 · Qué practicar en cada sitio</h2>
+  <table>
+    <thead><tr><th>Elemento</th><th>Dónde está</th><th>Procedimiento</th></tr></thead>
+    <tbody>
+      <tr><td>Botón con ID propio</td><td>Portada · <code>btn-demo</code></td><td>10 · apuntar por ID</td></tr>
+      <tr><td>Botón sin ID, solo clase</td><td>Portada · <code>btn-catalogo</code></td><td>10 · apuntar por clase</td></tr>
+      <tr><td>Dos botones con el mismo texto</td><td>Portada · «Seleccionar»</td><td>10 · por qué no usar el texto</td></tr>
+      <tr><td>Tres botones con atributos de datos</td><td>Suscripción · <code>btn-plan</code></td><td>10 y 15 · evento con parámetros</td></tr>
+      <tr><td>Enlace con aspecto de botón</td><td>Suscripción · <code>btn-cta-contacto</code></td><td>10 · enlace frente a botón</td></tr>
+      <tr><td>Formulario clásico</td><td>Contacto · <code>form-contacto</code></td><td>11 · estrategias A y C</td></tr>
+      <tr><td>Formulario gestionado por JavaScript</td><td>Contacto · <code>btn-suscribirse</code></td><td>11 · el que falla, estrategia B</td></tr>
+      <tr><td>Página de confirmación</td><td><code>gracias.html</code></td><td>11 · estrategia C</td></tr>
+      <tr><td>Buscador interno</td><td>Portada · parámetro <code>q</code></td><td>Medición mejorada</td></tr>
+      <tr><td>Enlace externo</td><td>Portada · Wikipedia</td><td>Medición mejorada</td></tr>
+      <tr><td>Descarga de PDF</td><td>Recursos · <code>btn-descarga-pdf</code></td><td>Medición mejorada</td></tr>
+      <tr><td>Vídeo incrustado</td><td>Recursos</td><td>Medición mejorada</td></tr>
+      <tr><td>Página larga</td><td>Recursos</td><td>12 · desplazamiento</td></tr>
+    </tbody>
+  </table>
+
+  <h2>6 · El embudo que puedes construir</h2>
+  <p>Con este sitio puedes montar un recorrido completo de cuatro pasos para el procedimiento 17, aunque con tus propios datos tardará días en tener volumen suficiente:</p>
+  <ol>
+    <li>Vista de la portada</li>
+    <li>Vista de la página de suscripción</li>
+    <li>Clic en un botón de plan</li>
+    <li>Vista de la página de gracias</li>
+  </ol>
+  <p>Para practicar el embudo <em>hoy</em>, usa la cuenta demo de Google Analytics: tiene años de datos reales. Tu laboratorio sirve para implementar; la cuenta demo, para analizar.</p>
+
+  <h2>7 · Para usarlo con los alumnos</h2>
+  <p>Tienes dos opciones, y la segunda es mejor para una sesión de 2,5 horas:</p>
+  <ul>
+    <li><strong>Que cada alumno publique su propia copia.</strong> Aprenden más, pero se pierden entre diez y quince minutos en incidencias de publicación.</li>
+    <li><strong>Publícalo tú una vez y reparte la dirección.</strong> Cada alumno crea su propio contenedor de GTM, pero no puede instalarlo en tu sitio. Para resolverlo, usa la extensión de Google <em>Tag Assistant Companion</em>, que permite inyectar un contenedor en cualquier web para hacer pruebas. Ensáyalo antes: te ahorra la mitad del tiempo de la práctica 2.</li>
+  </ul>
+
+  <div class="caja">
+    <h3 style="margin-top:0">Siguiente paso</h3>
+    <p style="margin-bottom:0">Publica el sitio, comprueba que las cinco páginas cargan, y abre el manual por el procedimiento 1. Con el sitio ya en marcha, los procedimientos 1 a 8 te llevan unos 60 minutos la primera vez.</p>
+  </div>
+</main>
+
+<footer>
+  <div>Sitio de pruebas para formación en analítica digital. Cafetera Norte es una empresa ficticia.</div>
+</footer>
+
+</body>
+</html>
